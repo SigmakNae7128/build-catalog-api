@@ -26,7 +26,7 @@ const Build = mongoose.model("Build", {
 app.post("/addbuild", async (req, res) => {
   const build = new Build({
     name: req.body.name,
-    gamepasses: req.body.description,
+    gamepasses: req.body.gamepasses,
     code: req.body.code,
     value: req.body.value
     imageLink: req.body.image,
