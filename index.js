@@ -14,6 +14,9 @@ const Build = mongoose.model("Build", {
   name: String,
   gamepasses: String,
   code: String,
+  value: Number,
+  imageLink: String,
+  category: String,
   author: String,
   createdAt: Date
 });
@@ -25,6 +28,9 @@ app.post("/addbuild", async (req, res) => {
     name: req.body.name,
     gamepasses: req.body.description,
     code: req.body.code,
+    value: req.body.value
+    imageLink: req.body.image,
+    category: req.body.category
     author: req.body.author,
     createdAt: new Date()
   });
