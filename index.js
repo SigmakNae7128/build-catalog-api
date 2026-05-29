@@ -12,7 +12,7 @@ mongoose.connect("mongodb+srv://botghost:botghost25@buildcatalog.79c33vp.mongodb
 // 📦 Schema
 const Build = mongoose.model("Build", {
   name: String,
-  description: String,
+  gamepasses: String,
   code: String,
   author: String,
   createdAt: Date
@@ -23,7 +23,7 @@ const Build = mongoose.model("Build", {
 app.post("/addbuild", async (req, res) => {
   const build = new Build({
     name: req.body.name,
-    description: req.body.description,
+    gamepasses: req.body.description,
     code: req.body.code,
     author: req.body.author,
     createdAt: new Date()
