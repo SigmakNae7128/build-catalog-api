@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 // 🔗 MongoDB connect
-mongoose.connect("mongodb+srv://botghost:<botghost25>@buildcatalog.79c33vp.mongodb.net/?appName=buildcatalog");
+mongoose.connect("mongodb+srv://botghost:botghost25@buildcatalog.79c33vp.mongodb.net/?appName=buildcatalog");
 
 // 📦 Schema
 const Build = mongoose.model("Build", {
