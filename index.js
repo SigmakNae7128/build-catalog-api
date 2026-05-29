@@ -24,16 +24,15 @@ const Build = mongoose.model("Build", {
 
 // ➕ ADD BUILD
 app.post("/addbuild", async (req, res) => {
-  const build = new Build({
-    name: req.body.name,
-    gamepasses: req.body.gamepasses,
-    code: req.body.code,
-    value: req.body.value
-    imageLink: req.body.image,
-    category: req.body.category
-    author: req.body.author,
-    createdAt: new Date()
-  });
+ const build = new Build({
+  name: req.body.name,
+  gamepasses: req.body.gamepasses,
+  code: req.body.code,
+  value: req.body.value,
+  imageLink: req.body.image,
+  author: req.body.author,
+  createdAt: new Date()
+});
 
   await build.save();
   res.json({ success: true, build });
