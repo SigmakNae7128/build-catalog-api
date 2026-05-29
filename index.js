@@ -67,18 +67,6 @@ app.delete("/removebuild", async (req, res) => {
   });
 });
 
-
-//  👀 VIEW BUILD
-app.get("/viewbuild", async (req, res) => {
-  const code = req.query.code;
-
-  const build = await Build.findOne({
-    code: code
-  });
-
-  res.json(build);
-});
-
 // 🚀 START SERVER
 app.listen(3000, () => {
   console.log("API running");
