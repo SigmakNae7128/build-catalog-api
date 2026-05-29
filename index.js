@@ -49,10 +49,7 @@ app.get("/searchbuild", async (req, res) => {
   const query = req.query.q;
 
   const results = await Build.find({
-    $or: [
-      { name: { $regex: query, $options: "i" } },
-      { category: { $regex: query, $options: "i" } }
-    ]
+    category: { $regex: query, $options: "i" }
   });
 
   res.json(results);
