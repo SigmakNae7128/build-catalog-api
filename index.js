@@ -54,8 +54,13 @@ app.get("/searchbuild", async (req, res) => {
 
 // ❌ REMOVE BUILD
 app.delete("/removebuild", async (req, res) => {
-  await Build.deleteOne({ name: req.body.name });
-  res.json({ success: true });
+  const result = await Build.deleteOne({
+    code: req.body.code
+  });
+
+  res.json({
+    success: result.deletedCount > 0
+  });
 });
 
 
