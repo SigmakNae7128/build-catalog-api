@@ -45,11 +45,14 @@ app.post("/addbuild", async (req, res) => {
 
 
 // 🔎 SEARCH BUILD
-app.get("/searchcategory", async (req, res) => {
-  const category = req.query.category;
+app.get("/searchbuild", async (req, res) => {
+  const query = req.query.q;
 
   const results = await Build.find({
-    category: { $regex: category, $options: "i" }
+    $or: [
+      { name: { $regex: query, $options: "i" } },
+      { category: { $regex: query, $options: "i" } }
+    ]
   });
 
   res.json(results);
